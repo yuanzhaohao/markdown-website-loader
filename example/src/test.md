@@ -10,6 +10,8 @@ subtitle: The most basic usage.
 ```
 
 ```js
+import React from 'react';
+import ReactDOM from 'react-dom';
 // import { Switch } from 'dashkit-ui';
 
 function onChange(checked) {
@@ -17,7 +19,7 @@ function onChange(checked) {
 }
 
 ReactDOM.render(
-  <Switch defaultChecked onChange={onChange} />,
+  <input type="checkbox" defaultChecked onChange={onChange} />,
   mountNode
 );
 ```
