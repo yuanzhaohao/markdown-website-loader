@@ -4,7 +4,8 @@
   "description": "A simple markdown loader.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run dev",
+    "dev": "cd example && webpack-dev-server --inline --hot --port 8999 --open"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,20 @@
   "bugs": {
     "url": "https://github.com/yuanzhaohao/markdown-loader/issues"
   },
-  "homepage": "https://github.com/yuanzhaohao/markdown-loader#readme"
+  "homepage": "https://github.com/yuanzhaohao/markdown-loader#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "style-loader": "^0.23.0",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.3"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "marked": "^0.5.0"
+  }
 }
