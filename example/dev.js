@@ -36,7 +36,10 @@ const compiler = webpack({
       },
       {
         test: /\.md$/,
-        loader: path.resolve(__dirname, '../index.js'),
+        loader: [
+          'babel-loader',
+          path.resolve(__dirname, '../index.js'),
+        ]
       }
     ]
   },
@@ -64,3 +67,5 @@ app.use(require('connect-history-api-fallback')());
 app.use(devMiddleware);
 
 app.listen(PORT);
+
+console.log(`Uri: ${URI}`);

@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import marked from 'marked';
 
 class Example extends React.PureComponent {
   constructor(props) {
@@ -10,29 +8,18 @@ class Example extends React.PureComponent {
       showCode: false,
     };
   }
-
-  componentDidMount() {
-    // const args = ['context'];
-    // const argv = [this];
-    // const { component } = this.props.dataSource;
-
-    // args.push(component);
-    // new Function(...args).apply(this, argv);
-  }
-
   render() {
-    const { dataMeta, dataCode, component } = this.props.dataSource;
+    const { dataMeta, dataCode, previewer } = this.props.dataSource;
     const { showCode } = this.state;
-    console.log(typeof component, component);
 
     return (
       <div className="example">
-        <div className="example-content" ref={this.contentKey}></div>
+        <div className="example-content" ref={this.contentKey}>{previewer()}</div>
         <div className="example-info">
           {dataMeta.title ? <div className="example-title">{dataMeta.title}</div> : null}
           {dataMeta.subtitle
             ? <div className="example-subtitle" dangerouslySetInnerHTML={{
-                __html: marked(dataMeta.subtitle),
+                __html: dataMeta.subtitle,
               }} />
             : null
           }

@@ -10,8 +10,6 @@ subtitle: The most basic usage.
 ```
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
 // import { Switch } from 'dashkit-ui';
 
 function onChange(checked) {
