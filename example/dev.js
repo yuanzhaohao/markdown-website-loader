@@ -34,9 +34,8 @@ const compiler = webpack({
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.md$/,
+        test: /(en\-US)|(zh\-CN)\.md$/,
         loader: [
-          'babel-loader',
           path.resolve(__dirname, '../index.js'),
         ]
       }

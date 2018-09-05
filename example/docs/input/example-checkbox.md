@@ -4,13 +4,13 @@ title:
   zh-CN: Checkbox
   en-US: Checkbox
 subtitle: 
-  zh-CN: 提供多种不同的buttons。
+  zh-CN: checkbox测试
   en-US: Buttons for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
 ---
 
 ```js
 function onChange(event) {
-  console.log(event);
+  console.log(event.value);
 }
 
 ReactDOM.render(
