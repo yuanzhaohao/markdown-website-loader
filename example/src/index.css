@@ -121,6 +121,18 @@ h1 {
   margin-bottom: 10px;
 }
 
+h1 {
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
 p {
   margin-top: 7px;
   margin-bottom: 7px;
@@ -135,16 +147,50 @@ p {
   box-sizing: border-box;
 }
 
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  background-color: transparent;
+  vertical-align: middle;
+  border-collapse: collapse;
+}
+
+table thead th {
+  font-weight: 600;
+  font-size: .8125rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #95aac9;
+  border-bottom-width: 1px;
+  background-color: #f9fbfd
+}
+
+table td,
+table th {
+  padding: .9375rem;
+  vertical-align: top;
+  border-top: 1px solid #edf2f9
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #edf2f9
+}
+
+table tbody+tbody {
+  border-top: 2px solid #edf2f9
+}
+
+table table {
+  background-color: #f9fbfd
+}
+
 
 .example {
   width: 100%;
   border: 1px solid #edf2f9;
   background-color: #fff;
   margin-top: 24px;
-
-  &:nth-of-type(1) {
-    margin-top: 0;
-  }
 }
 
 .example-content {

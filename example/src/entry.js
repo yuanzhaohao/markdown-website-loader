@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import dataSource from './test.md';
+import dataSource from '../docs/input/en-US.md';
+// import dataSource from './test.md';
 import Example from './example';
 
 console.log(dataSource);
@@ -13,7 +14,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="basic" dangerouslySetInnerHTML={{
-          __html: dataSource.markdown,
+          __html: dataSource.basic,
         }} />
         <div className="demos">{demos.map((demo, key) => 
           <Example key={key} dataSource={demo} />

@@ -2,45 +2,7 @@
 
 Replaces a standard checkbox input with a switch button.
 
-:::example
-
-```meta
-title: Checkbox
-subtitle: The Checkbox usage.
-```
-
-```js
-function onChange(value) {
-  console.log(value);
-}
-
-ReactDOM.render(
-  <input type="checkbox" defaultChecked onChange={onChange} />,
-  mountNode
-);
-```
-:::
-
-
-:::example
-
-```meta
-title: Radio
-subtitle: The Radio usage.
-```
-
-```js
-
-function onChange(value) {
-  console.log(value);
-}
-
-ReactDOM.render(
-  <input type="radio" defaultChecked onChange={onChange} />,
-  mountNode
-);
-```
-:::
+<example />
 
 ## API
 Property    | Description    | Type      | Default   |

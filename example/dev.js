@@ -3,7 +3,6 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
-const proxyMiddleware = require('http-proxy-middleware');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HOST = 'localhost';
