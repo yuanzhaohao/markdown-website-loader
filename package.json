@@ -1,5 +1,5 @@
 {
-  "name": "markdown-loader",
+  "name": "markdown-website-loader",
   "version": "0.0.1",
   "description": "A simple markdown loader.",
   "main": "index.js",
