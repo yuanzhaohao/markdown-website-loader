@@ -2,7 +2,7 @@
 
 Replaces a standard checkbox input with a switch button.
 
-<example />
+<Demos />
 
 ## API
 Property    | Description    | Type      | Default   |

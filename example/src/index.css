@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 html {
-  color: #000;
   background: #fff;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
@@ -119,12 +118,7 @@ h1 {
   font-size: 26px;
   margin-top: 15px;
   margin-bottom: 10px;
-}
-
-h1 {
-  font-size: 26px;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  color: #111;
 }
 
 h2 {
@@ -137,6 +131,7 @@ p {
   margin-top: 7px;
   margin-bottom: 7px;
   font-size: 14px;
+  color: #95aac9;
 }
 
 .container {
@@ -185,6 +180,14 @@ table table {
   background-color: #f9fbfd
 }
 
+code {
+  margin: 0 1px;
+  background: #f2f4f5;
+  padding: .2em .4em;
+  border-radius: 3px;
+  font-size: .9em;
+  border: 1px solid #eee;
+}
 
 .example {
   width: 100%;

@@ -1,20 +1,16 @@
 ---
-order: 0
+order: 2
 title:
-  zh-CN: Checkbox
-  en-US: Checkbox
+  zh-CN: Radio
+  en-US: Radio
 subtitle: 
-  zh-CN: checkbox测试
+  zh-CN: radio测试
   en-US: Buttons for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
 ---
 
 ```js
-function onChange(event) {
-  console.log(event.value);
-}
-
 ReactDOM.render(
-  <input type="checkbox" onChange={onChange} />,
+  <input type="radio" />,
   mountNode
 );
 ```
