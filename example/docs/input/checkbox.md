@@ -10,7 +10,7 @@ subtitle:
 
 ```js
 function onChange(event) {
-  console.log(event);
+  console.log(`switch to ${event.target.checked}`);
 }
 
 ReactDOM.render(
