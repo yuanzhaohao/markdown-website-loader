@@ -4,8 +4,8 @@ title:
   zh-CN: Text
   en-US: Text
 subtitle: 
-  zh-CN: 提供多种不同的buttons。
-  en-US: Buttons for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+  zh-CN: 副标题可以使用markdown语法，例如`size`, `type`, `disabled`。
+  en-US: Markdown grammar can be use here. Such as `size`, `type`, `disabled`.
 ---
 
 ```js
