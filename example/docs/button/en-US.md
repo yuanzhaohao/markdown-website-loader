@@ -1,4 +1,4 @@
-# Input
+# Button
 
 Replaces a standard checkbox input with a switch button.
 
