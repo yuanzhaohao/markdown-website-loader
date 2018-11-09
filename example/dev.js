@@ -11,13 +11,10 @@ const URI = `http://${HOST}:${PORT}/`;
 
 const app = express();
 const compiler = webpack({
-  entry: path.resolve(__dirname, './src/entry.js'),
+  entry: path.resolve(__dirname, './src/entry.tsx'),
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'build.js'
-  },
-  resolve: {
-    extensions: ['.js', 'css', 'md'],
   },
   module: {
     rules: [
@@ -30,8 +27,17 @@ const compiler = webpack({
         }
       },
       {
+        test: /\.(ts|tsx)$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.md$/,

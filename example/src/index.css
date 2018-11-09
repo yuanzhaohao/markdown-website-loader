@@ -413,3 +413,15 @@ pre[class*="language-"] {
   height: 3px;
   background-color: #2c7be5;
 }
+
+.button-list {
+  margin-top: 12px;
+}
+
+.button-list:nth-of-type(1) {
+  margin-top: 0;
+}
+
+.button-list button {
+  margin-right: 12px;
+}

@@ -1,10 +1,11 @@
 # Button
 
-Replaces a standard checkbox input with a switch button.
+Buttons for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
 
 <Demos />
 
 ## API
+### Button
 Property    | Description    | Type      | Default   |
 |---------- |-------- |---------- |-------------  |-------- |
 | className | className of the component | - | - |
@@ -16,3 +17,12 @@ Property    | Description    | Type      | Default   |
 | loading   | determine whether it's loading   | boolean | false  |
 | icon  | button icon, see `Icon` component | string  |  -  |
 | onClick | `click` event handler | - | - |
+
+### Button.Group
+Property    | Description    | Type      | Default   |
+|---------- |-------- |---------- |-------------  |-------- |
+| className | className of the component | - | - |
+| defaultValue | Default selected value  | -   | - |
+| size      | button size, can be set to `small` `large` or omitted   | string  | default  |
+| onChange  | `change` event handler | `Function(e: event)` | - |
+
