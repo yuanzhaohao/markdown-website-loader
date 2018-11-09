@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Icon } from 'dashkit-ui';
 
+import './example.scss';
+
 type ExampleProps = {
   dataSource: any;
   locale?: string;

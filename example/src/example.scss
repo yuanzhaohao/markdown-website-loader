@@ -1,0 +1,173 @@
+.example {
+  width: 100%;
+  border: 1px solid #edf2f9;
+  background-color: #fff;
+  margin-top: 24px;
+
+  &:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  // prism code css
+  code[class*="language-"] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 2;
+    hyphens: none;
+    color: #ccc;
+  }
+
+  pre[class*="language-"] {
+    padding: 16px 24px;
+    margin-bottom: 0;
+  }
+
+  :not(pre)>code[class*="language-"],
+  pre[class*="language-"] {
+    background-color: #12263f;
+  }
+
+  :not(pre)>code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+  }
+
+  .token.comment,
+  .token.block-comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #999;
+  }
+
+  .token.punctuation {
+    color: #569cd6;
+  }
+
+  .token.tag,
+  .token.attr-name,
+  .token.namespace,
+  .token.deleted {
+    color: #e2777a;
+  }
+
+  .token.function-name {
+    color: #6196cc;
+  }
+
+  .token.boolean,
+  .token.number,
+  .token.function {
+    color: #f08d49;
+  }
+
+  .token.property,
+  .token.class-name,
+  .token.constant,
+  .token.symbol {
+    color: #569cd6;
+  }
+
+  .token.selector,
+  .token.important,
+  .token.atrule,
+  .token.keyword,
+  .token.builtin {
+    color: #cc99cd;
+  }
+
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.regex,
+  .token.variable {
+    color: #7ec699;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url {
+    color: #67cdcc;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+
+  .token.inserted {
+    color: green;
+  }
+
+}
+
+.example-code {
+  overflow: scroll;
+}
+
+.example-content {
+  padding: 24px 24px 32px;
+}
+
+.example-info {
+  position: relative;
+  padding: 16px 30px 16px 24px;
+  border-top: 1px solid #edf2f9;
+}
+
+.example-title {
+  position: absolute;
+  top: -15px;
+  left: 16px;
+  height: 30px;
+  padding: 0 8px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.example-subtitle {
+  color: #95aac9;
+
+  >p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.example-control {
+  position: absolute;
+  right: 10px;
+  bottom: 16px;
+  color: #95aac9;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    color: #888;
+  }
+}

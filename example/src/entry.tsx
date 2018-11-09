@@ -1,4 +1,4 @@
-import './index.css';
+import './index.scss';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -10,7 +10,7 @@ import Page from './page';
 const { Content, Footer } = Layout;
 const IndexPage = asyncComponent(() => import('./index'));
 const pages = [
-  'input', 'button'
+  'checkbox', 'button', 'grid', 'menu', 'message', 'pagination'
 ]
 
 

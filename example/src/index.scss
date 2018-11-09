@@ -1,0 +1,452 @@
+@charset "utf-8";
+
+html {
+  background: #fff;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html * {
+  outline:none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html, body {
+  font-family: sans-serif;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+input, select, textarea {
+  font-size: 100%;
+}
+
+/* 去掉各 Table  cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+  border: 0;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol, ul {
+  list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+  text-align: left;
+}
+
+/* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+/* 统一上标和下标 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 正常链接 未访问 */
+a:link {
+}
+
+/* 鼠标悬停 */
+a:hover {
+  text-decoration: none;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  background-color: #f7f7f7;
+  font-family: 'Helvetica Neue', Helvetica, STHeiTi, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #111;
+  overflow: hidden;
+  min-height: 100vh;
+}
+h1 {
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+p {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  font-size: 14px;
+  color: #95aac9;
+}
+
+.container {
+  width: 990px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  background-color: transparent;
+  vertical-align: middle;
+  border-collapse: collapse;
+}
+
+table thead th {
+  font-weight: 600;
+  font-size: .8125rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #95aac9;
+  border-bottom-width: 1px;
+  background-color: #f9fbfd
+}
+
+table td,
+table th {
+  padding: .9375rem;
+  vertical-align: top;
+  border-top: 1px solid #edf2f9
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #edf2f9
+}
+
+table tbody+tbody {
+  border-top: 2px solid #edf2f9
+}
+
+table table {
+  background-color: #f9fbfd
+}
+
+.app-layout {
+  width: calc(100vw - 250px);
+  margin-left: 250px;
+  overflow: hidden;
+}
+
+.app-content {
+  position: relative;
+  min-height: calc(100vh - 66px - 36px);
+  background-color: #f9fbfd;
+}
+
+.app-footer {
+  padding-bottom: 15px;
+  background-color: #f9fbfd;
+  text-align: center;
+}
+
+.page-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+}
+
+.index-page {
+  margin-top: 120px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+// Layout
+//
+.layout-list {
+  text-align: center;
+
+  >.dk-layout {
+    margin-bottom: 30px;
+  }
+
+  .dk-layout-header,
+  .dk-layout-footer {
+    background: #2c7be5;
+    color: #fff;
+    height: 64px;
+    line-height: 64px;
+  }
+
+  .dk-layout-content {
+    background: #036;
+    color: #fff;
+    min-height: 120px;
+    line-height: 120px;
+  }
+
+  .dk-layout-sidebar {
+    background: #06C;
+    color: #fff;
+    min-height: 120px;
+    line-height: 120px;
+  }
+}
+
+// Grid
+//
+@mixin grid-make-item() {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 16px;
+  background: #2c7be5;
+  border: 1px solid #FFF;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.grid-list {
+  div[class*="dk-grid-col-"] {
+    margin-bottom: 16px;
+
+    &::after {
+      content: '';
+      @include grid-make-item;
+    }
+  }
+}
+
+.grid-title {
+  margin-top: 24px;
+  color: #2c7be5;
+}
+
+.grid-title-first {
+  margin-top: 0;
+}
+
+.grid-nested,
+.grid-alignment {
+  .grid-box {
+    @include grid-make-item;
+  }
+
+  .grid-box-nested {
+    background: #036;
+    border-color: #2c7be5;
+  }
+
+  .grid-box-first {
+    background: #06C;
+    border-color: #2c7be5;
+  }
+
+  .grid-box-large {
+    height: 100px;
+  }
+}
+
+// Button
+//
+.button-list {
+  margin-top: 12px;
+
+  &:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  button {
+    margin-right: 12px;
+  }
+}
+
+// Checkbox
+//
+.checkbox-list {
+  >label {
+    margin-right: 20px;
+  }
+}
+
+.checkbox-checkall {
+  border-bottom: 1px solid #e3ebf6;
+  padding-bottom: 10px;
+}
+
+// Alert
+//
+.alert-list {
+  margin-top: 12px;
+}
+
+// Icon
+//
+.icon-list {
+  width: 100%;
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.icon-item-wrapper {
+  float: left;
+  width: 1 / 5 * 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 5px 8px 5px;
+  border: 1px solid #e3ebf6;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .2s;
+
+  >span {
+    display: block;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &:hover {
+    color: #2c7be5;
+    background-color: #f9fbfd;
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
+  }
+}
+
+// Message
+//
+.message-wrapper {
+  button {
+    margin-right: 10px;
+  }
+}
+
+// Spin
+//
+.spin-list {
+  display: flex;
+  align-items: center;
+
+  .dk-spin {
+    margin-right: 20px;
+  }
+}
+
+// Switch
+//
+.switch-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .dk-switch {
+    margin-right: 10px;
+  }
+}
+
+// Menu
+//
+.menu-item {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.menu-theme {
+
+  &-switch {
+    margin-bottom: 20px;
+  }
+}
+
+// Pagination
+//
+.pagination-wrapper {
+  .dk-pagination {
+    margin-bottom: 10px;
+  }
+}
+
+// Calendar
+//
+.calendar-item {
+  padding: 12px 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 7px;
+    font-size: 16px;
+  }
+}
