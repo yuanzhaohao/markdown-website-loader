@@ -11,7 +11,7 @@
     "baseUrl": ".",
     "sourceMap": false,
   },
-  "include": ["./example/src/**/*"],
+  "include": ["./example/**/*"],
   "exclude": [
     "node_modules"
   ]

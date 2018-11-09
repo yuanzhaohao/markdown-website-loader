@@ -5,7 +5,7 @@ import { Spin, Grid } from 'dashkit-ui';
 import Example from './example';
 const { Row, Col } = Grid;
 
-interface PageProps extends RouteComponentProps<PageProps> {
+type PageProps = RouteComponentProps & {
   dataSource: any;
   locale?: string;
 };
@@ -17,7 +17,7 @@ type PageState = {
   } | null;
 }
 
-class Page extends React.PureComponent<PageProps, PageState> {
+class Page extends React.Component<PageProps, PageState> {
   constructor(props: PageProps) {
     super(props);
     this.state = {
@@ -25,16 +25,20 @@ class Page extends React.PureComponent<PageProps, PageState> {
     }
   }
 
+
+
   async componentDidMount() {
-    const page = this.props.location.pathname.replace('/components/', '');
-    const locale = window.localStorage.getItem('DASHKIT_UI_LOCALE') || 'en-US';
-    const dataSource = await import(`../../../docs/${page}/${locale}.md`);
+    const page = this.props.location.pathname.replace('/', '');
+    const locale = 'en-US';
+    const dataSource = await import(`../docs/${page}/${locale}.md`);
 
     this.setState({
       dataSource,
     });
 
     const demoElement = document.getElementById('demos');
+
+    console.log('call componentDidMount')
 
     if (demoElement && dataSource.demos && Object.keys(dataSource.demos)) {
       const demoData = Object.keys(dataSource.demos)
@@ -55,6 +59,7 @@ class Page extends React.PureComponent<PageProps, PageState> {
 
   render() {
     const { dataSource } = this.state;
+    console.log('call page render')
 
     return (
       <Grid className="app-page" fluid>

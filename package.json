@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/yuanzhaohao/markdown-loader#readme",
   "devDependencies": {
+    "@types/react": "^16.7.1",
+    "@types/react-dom": "^16.0.9",
+    "@types/react-router-dom": "^4.3.1",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-polyfill": "^6.26.0",
@@ -35,6 +38,7 @@
     "css-loader": "^1.0.0",
     "dashkit-ui": "0.0.4",
     "express": "^4.16.3",
+    "happypack": "^5.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.10.0",
     "react": "^16.4.2",

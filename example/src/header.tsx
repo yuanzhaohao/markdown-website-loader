@@ -1,3 +1,6 @@
+
+import './header.scss';
+
 import * as React from 'react';
 import * as classNames from 'classnames';
 import { Link } from 'react-router-dom';
@@ -5,7 +8,6 @@ import { Link } from 'react-router-dom';
 class Header extends React.Component {
 
   render() {
-    console.log('call render')
     const pages = [
       {
         name: 'Button',

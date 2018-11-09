@@ -1,28 +1,36 @@
 import './index.css';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch, Redirect, NavLink } from 'react-router-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Layout } from 'dashkit-ui';
+import CommonSidebar from './sidebar';
 import asyncComponent from './async-component';
-import Header from './header';
-
+import Page from './page';
+const { Content, Footer } = Layout;
 const IndexPage = asyncComponent(() => import('./index'));
-const InputPage = asyncComponent(() => import('../docs/input/en-US.md'));
-const ButtonPage = asyncComponent(() => import('../docs/button/en-US.md'));
+const pages = [
+  'input', 'button'
+]
+
 
 const App = () => (
   <HashRouter>
-    <div>
-      <Header />
-      <div className="app-content">
-        <Switch>
-          <Route exact path="/" component={IndexPage} />
-          <Route exact path="/input" component={InputPage} />
-          <Route exact path="/button" component={ButtonPage} />
-          <Redirect to="/" />
-        </Switch>
-      </div>
-    </div>
+    <Layout>
+      <CommonSidebar pages={pages} />
+      <Layout className="app-layout">
+        <Content className="app-content">
+          <Switch>
+            <Route exact path="/" component={IndexPage} />
+            {pages.map(page =>
+              <Route key={page} exact path={`/${page}`} component={Page} />
+            )}
+            <Redirect to="/" />
+          </Switch>
+        </Content>
+        <Footer className="app-footer">Powered by Yuan Zhaohao</Footer>
+      </Layout>
+    </Layout>
   </HashRouter>
 )
 
