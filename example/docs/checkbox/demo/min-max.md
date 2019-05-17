@@ -29,14 +29,14 @@ class App extends React.Component {
         max={2}
         min={1}
       >
-        {cityOptions.map((city, index) =>
+        {cityOptions.map((city, index) => (
           <Checkbox key={index} label={city} />
-        )}
+        ))}
       </Checkbox.Group>
     );
   }
 
-  onGroupChange = (value) => {
+  onGroupChange = value => {
     const checkedCount = value.length;
     const citiesLength = cityOptions.length;
 
@@ -45,7 +45,7 @@ class App extends React.Component {
       indeterminate: checkedCount > 0 && checkedCount < citiesLength,
       checkAll: checkedCount === citiesLength,
     });
-  }
+  };
 }
 
 ReactDOM.render(<App />, mountNode);

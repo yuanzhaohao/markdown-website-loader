@@ -30,6 +30,6 @@ ReactDOM.render(
       <Col xs={2} sm={6} md={4} lg={2} />
     </Row>
   </div>,
-  mountNode
+  mountNode,
 );
 ```

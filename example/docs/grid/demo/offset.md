@@ -28,6 +28,6 @@ ReactDOM.render(
       <Col xsOffset={1} xs={11} />
     </Row>
   </div>,
-  mountNode
+  mountNode,
 );
 ```

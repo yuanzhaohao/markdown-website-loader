@@ -25,22 +25,42 @@ ReactDOM.render(
 
     <div className="button-list">
       <Button outline>Outline</Button>
-      <Button type="primary" outline>Primary</Button>
-      <Button type="success" outline>Success</Button>
-      <Button type="warning" outline>Warning</Button>
-      <Button type="danger" outline>Danger</Button>
-      <Button type="info" outline>Info</Button>
+      <Button type="primary" outline>
+        Primary
+      </Button>
+      <Button type="success" outline>
+        Success
+      </Button>
+      <Button type="warning" outline>
+        Warning
+      </Button>
+      <Button type="danger" outline>
+        Danger
+      </Button>
+      <Button type="info" outline>
+        Info
+      </Button>
     </div>
 
     <div className="button-list">
       <Button round>Round</Button>
-      <Button type="primary" round>Primary</Button>
-      <Button type="success" round>Success</Button>
-      <Button type="warning" round>Warning</Button>
-      <Button type="danger" round>Danger</Button>
-      <Button type="info" round>Info</Button>
+      <Button type="primary" round>
+        Primary
+      </Button>
+      <Button type="success" round>
+        Success
+      </Button>
+      <Button type="warning" round>
+        Warning
+      </Button>
+      <Button type="danger" round>
+        Danger
+      </Button>
+      <Button type="info" round>
+        Info
+      </Button>
     </div>
   </div>,
-  mountNode
+  mountNode,
 );
 ```

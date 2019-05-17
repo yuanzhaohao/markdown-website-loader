@@ -38,15 +38,15 @@ class App extends React.Component {
           value={this.state.checkedCities}
           onChange={this.onGroupChange}
         >
-          {cityOptions.map((city, index) =>
+          {cityOptions.map((city, index) => (
             <Checkbox key={index} label={city} />
-          )}
+          ))}
         </Checkbox.Group>
       </div>
     );
   }
 
-  onGroupChange = (value) => {
+  onGroupChange = value => {
     const checkedCount = value.length;
     const citiesLength = cityOptions.length;
 
@@ -55,19 +55,19 @@ class App extends React.Component {
       indeterminate: checkedCount > 0 && checkedCount < citiesLength,
       checkAll: checkedCount === citiesLength,
     });
-  }
+  };
 
-  onCheckAllChange = (e) => {
+  onCheckAllChange = e => {
     const { checked } = e.target;
     const checkedCities = checked ? cityOptions : [];
 
-    console.log(checkedCities)
+    console.log(checkedCities);
     this.setState({
       checkedCities,
       indeterminate: false,
       checkAll: checked,
     });
-  }
+  };
 }
 
 ReactDOM.render(<App />, mountNode);

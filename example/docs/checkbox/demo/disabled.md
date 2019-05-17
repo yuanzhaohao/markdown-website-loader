@@ -14,9 +14,10 @@ import { Checkbox } from 'dashkit-ui';
 ReactDOM.render(
   <div className="checkbox-list">
     <Checkbox disabled>Disabled 1</Checkbox>
-    <Checkbox defaultChecked disabled>Disabled 2</Checkbox>
-  </div>
-  ,
-  mountNode
+    <Checkbox defaultChecked disabled>
+      Disabled 2
+    </Checkbox>
+  </div>,
+  mountNode,
 );
 ```

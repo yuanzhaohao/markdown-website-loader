@@ -24,6 +24,6 @@ ReactDOM.render(
       <Col xs />
     </Row>
   </div>,
-  mountNode
+  mountNode,
 );
 ```

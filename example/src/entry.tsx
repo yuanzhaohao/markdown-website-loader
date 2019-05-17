@@ -9,10 +9,7 @@ import asyncComponent from './async-component';
 import Page from './page';
 const { Content, Footer } = Layout;
 const IndexPage = asyncComponent(() => import('./index'));
-const pages = [
-  'checkbox', 'button', 'grid', 'menu', 'message', 'pagination'
-]
-
+const pages = ['checkbox', 'button', 'grid', 'menu', 'message', 'pagination'];
 
 const App = () => (
   <HashRouter>
@@ -22,9 +19,9 @@ const App = () => (
         <Content className="app-content">
           <Switch>
             <Route exact path="/" component={IndexPage} />
-            {pages.map(page =>
+            {pages.map(page => (
               <Route key={page} exact path={`/${page}`} component={Page} />
-            )}
+            ))}
             <Redirect to="/" />
           </Switch>
         </Content>
@@ -32,9 +29,6 @@ const App = () => (
       </Layout>
     </Layout>
   </HashRouter>
-)
+);
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('app')
-)
+ReactDOM.render(<App />, document.getElementById('app'));

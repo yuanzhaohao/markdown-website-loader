@@ -15,22 +15,22 @@ type PageState = {
     markdown: string;
     demos: Object[];
   } | null;
-}
+};
 
 class Page extends React.Component<PageProps, PageState> {
   constructor(props: PageProps) {
     super(props);
     this.state = {
-      dataSource: null
-    }
+      dataSource: null,
+    };
   }
-
-
 
   async componentDidMount() {
     const page = this.props.location.pathname.replace('/', '');
     const locale = 'en-US';
     const dataSource = await import(`../docs/${page}/${locale}.md`);
+
+    console.log(dataSource);
 
     this.setState({
       dataSource,
@@ -38,20 +38,12 @@ class Page extends React.Component<PageProps, PageState> {
 
     const demoElement = document.getElementById('demos');
 
-    console.log('call componentDidMount')
-
     if (demoElement && dataSource.demos && Object.keys(dataSource.demos)) {
       const demoData = Object.keys(dataSource.demos)
         .map(key => dataSource.demos[key])
         .sort((a, b) => a.meta.order - b.meta.order);
       const children = demoData.map((d, key) => {
-        return (
-          <Example
-            key={key}
-            locale={locale}
-            dataSource={d}
-          />
-        )
+        return <Example key={key} locale={locale} dataSource={d} />;
       });
       ReactDOM.render(children, demoElement);
     }
@@ -59,24 +51,27 @@ class Page extends React.Component<PageProps, PageState> {
 
   render() {
     const { dataSource } = this.state;
-    console.log('call page render')
 
     return (
       <Grid className="app-page" fluid>
         <Row center="xs">
           <Col xs={12} md={10} lg={8}>
-            {dataSource && dataSource.markdown
-              ? <div className="app-page-info" dangerouslySetInnerHTML={{
-                __html: dataSource.markdown
-              }} />
-              : <div className="page-loading">
+            {dataSource && dataSource.markdown ? (
+              <div
+                className="app-page-info"
+                dangerouslySetInnerHTML={{
+                  __html: dataSource.markdown,
+                }}
+              />
+            ) : (
+              <div className="page-loading">
                 <Spin text="Loading..." spinning={true} />
               </div>
-            }
+            )}
           </Col>
         </Row>
       </Grid>
-    )
+    );
   }
 }
 

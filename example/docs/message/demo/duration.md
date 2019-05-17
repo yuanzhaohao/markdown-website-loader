@@ -15,8 +15,5 @@ const show = () => {
   Message.show('Display a 10s time message', 10);
 };
 
-ReactDOM.render(
-  <Button onClick={show}>Display a 10s time message</Button>,
-  mountNode
-);
+ReactDOM.render(<Button onClick={show}>Display a 10s time message</Button>, mountNode);
 ```

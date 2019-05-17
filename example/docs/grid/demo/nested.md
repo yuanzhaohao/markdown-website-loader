@@ -22,10 +22,10 @@ ReactDOM.render(
               <div className="grid-box grid-box-first">
                 <Row>
                   <Col xs={4}>
-                    <div className="grid-box grid-box-nested"></div>
+                    <div className="grid-box grid-box-nested" />
                   </Col>
                   <Col xs={8}>
-                    <div className="grid-box grid-box-nested"></div>
+                    <div className="grid-box grid-box-nested" />
                   </Col>
                 </Row>
               </div>
@@ -34,7 +34,7 @@ ReactDOM.render(
               <div className="grid-box grid-box-first">
                 <Row>
                   <Col xs>
-                    <div className="grid-box grid-box-nested"></div>
+                    <div className="grid-box grid-box-nested" />
                   </Col>
                 </Row>
               </div>
@@ -49,10 +49,10 @@ ReactDOM.render(
               <div className="grid-box grid-box-first">
                 <Row>
                   <Col xs={6}>
-                    <div className="grid-box grid-box-nested"></div>
+                    <div className="grid-box grid-box-nested" />
                   </Col>
                   <Col xs={6}>
-                    <div className="grid-box grid-box-nested"></div>
+                    <div className="grid-box grid-box-nested" />
                   </Col>
                 </Row>
               </div>
@@ -62,6 +62,6 @@ ReactDOM.render(
       </Col>
     </Row>
   </div>,
-  mountNode
+  mountNode,
 );
 ```

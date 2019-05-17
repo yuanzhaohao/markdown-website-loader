@@ -24,8 +24,12 @@ class MenuDemo extends React.Component {
         onSelect={this.onMenuSelect}
         onOpen={this.onSubMenuOpen}
       >
-        <Item icon="home" index="Dashboard">Dashboard</Item>
-        <Item icon="clipboard" index="Getting started">Getting started</Item>
+        <Item icon="home" index="Dashboard">
+          Dashboard
+        </Item>
+        <Item icon="clipboard" index="Getting started">
+          Getting started
+        </Item>
         <SubMenu icon="book-open" title="Components" index="Components">
           <Item index="Alert">Alert</Item>
           <Item index="button">Button</Item>
@@ -36,24 +40,25 @@ class MenuDemo extends React.Component {
             <Item index="MenuSubmenu">MenuSubmenu</Item>
           </SubMenu>
         </SubMenu>
-        <Item icon="git-branch" index="Changelog" disabled>Changelog</Item>
+        <Item icon="git-branch" index="Changelog" disabled>
+          Changelog
+        </Item>
         <SubMenu icon="layout" index="Layouts" title="Layouts">
           <Item index="Slidenav">Slidenav</Item>
           <Item index="Topnav">Topnav</Item>
         </SubMenu>
-        <SubMenu icon="file" index="Empty submenu" title="Empty submenu">
-        </SubMenu>
+        <SubMenu icon="file" index="Empty submenu" title="Empty submenu" />
       </Menu>
     );
   }
 
-  onMenuSelect = (index) => {
+  onMenuSelect = index => {
     console.log(`item selected: ${index}`);
-  }
+  };
 
-  onSubMenuOpen = (index) => {
+  onSubMenuOpen = index => {
     console.log(`submunu opened: ${index}`);
-  }
+  };
 }
 
 ReactDOM.render(
@@ -65,6 +70,6 @@ ReactDOM.render(
       <MenuDemo theme="dark" />
     </Col>
   </Row>,
-  mountNode
+  mountNode,
 );
 ```

@@ -12,11 +12,13 @@ subtitle:
 import { Checkbox } from 'dashkit-ui';
 
 function onChange(e) {
-  console.log(`change to ${e.target.checked}`)
+  console.log(`change to ${e.target.checked}`);
 }
 
 ReactDOM.render(
-  <Checkbox defaultChecked onChange={onChange}>Option</Checkbox>,
-  mountNode
+  <Checkbox defaultChecked onChange={onChange}>
+    Option
+  </Checkbox>,
+  mountNode,
 );
 ```

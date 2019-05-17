@@ -16,8 +16,7 @@ ReactDOM.render(
     <Checkbox checked={false}>checked false</Checkbox>
     <Checkbox checked={true}>checked true</Checkbox>
     <Checkbox indeterminate>checked indeterminate</Checkbox>
-  </div>
-  ,
-  mountNode
+  </div>,
+  mountNode,
 );
 ```

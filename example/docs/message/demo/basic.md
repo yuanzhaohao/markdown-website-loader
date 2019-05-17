@@ -3,7 +3,7 @@ order: 0
 title:
   zh-CN: 基本
   en-US: Basic
-subtitle: 
+subtitle:
   zh-CN: 使用`show`、`success`、`error`、`info`、`warning`来展示不同的消息。
   en-US: Use `show`, `success`, `error`, `info`, `warning` to show different messages.
 ---
@@ -39,6 +39,6 @@ ReactDOM.render(
     <Button onClick={info}>Info</Button>
     <Button onClick={warning}>Warning</Button>
   </div>,
-  mountNode
+  mountNode,
 );
 ```
