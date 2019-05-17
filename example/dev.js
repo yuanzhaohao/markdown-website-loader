@@ -12,44 +12,50 @@ const URI = `http://${HOST}:${PORT}/`;
 const app = express();
 
 const createHappypackPlugin = () => {
-  const os = require('os')
-  const HappyPack = require('happypack')
-  const threadPool = HappyPack.ThreadPool({ size: os.cpus().length })
+  const os = require('os');
+  const HappyPack = require('happypack');
+  const threadPool = HappyPack.ThreadPool({ size: os.cpus().length });
   const createHappypack = (id, loaders) => {
-    return new HappyPack({ id, loaders, threadPool })
-  }
+    return new HappyPack({ id, loaders, threadPool });
+  };
 
   return [
-    createHappypack('js', [{
-      path: 'babel-loader',
-      query: {
-        cacheDirectory: '.happypack_cache'
-      }
-    }]),
-    createHappypack('ts', [{
-      path: 'ts-loader',
-      query: {
-        happyPackMode: true
-      }
-    }]),
-    createHappypack('sass', [{
-      loader: 'sass-loader',
-      options: {
-        data: "$icon-base-url: '//yuanzhaohao.github.io/dashkit-ui/static';"
-      }
-    }]),
+    createHappypack('js', [
+      {
+        path: 'babel-loader',
+        query: {
+          cacheDirectory: '.happypack_cache',
+        },
+      },
+    ]),
+    createHappypack('ts', [
+      {
+        path: 'ts-loader',
+        query: {
+          happyPackMode: true,
+        },
+      },
+    ]),
+    createHappypack('sass', [
+      {
+        loader: 'sass-loader',
+        options: {
+          data: "$icon-base-url: '//yuanzhaohao.github.io/dashkit-fonts';",
+        },
+      },
+    ]),
     createHappypack('css', ['css-loader']),
-  ]
-}
+  ];
+};
 
 const compiler = webpack({
   entry: path.resolve(__dirname, './src/entry.tsx'),
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'build.js'
+    filename: 'build.js',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.json', '.css', '.scss', '.svg', '.md']
+    extensions: ['.js', '.ts', '.tsx', '.json', '.css', '.scss', '.svg', '.md'],
   },
   module: {
     rules: [
@@ -65,19 +71,18 @@ const compiler = webpack({
       },
       {
         test: /\.scss$/,
-        loader: ['style-loader', 'happypack/loader?id=css', 'happypack/loader?id=sass']
+        loader: ['style-loader', 'happypack/loader?id=css', 'happypack/loader?id=sass'],
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'happypack/loader?id=css'],
       },
       {
-        test: /\.md$/,
-        loader: [
-          path.resolve(__dirname, '../index.js'),
-        ]
-      }
-    ]
+        // test: /\.md$/,
+        test: /(en\-US)|(zh\-CN)\.md(\?.*)?$/,
+        loader: [path.resolve(__dirname, '../index.js')],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -87,16 +92,16 @@ const compiler = webpack({
       chunksSortMode: 'dependency',
       minify: {
         removeComments: true,
-        collapseWhitespace: false
+        collapseWhitespace: false,
       },
     }),
-    ...(createHappypackPlugin()),
-  ]
+    ...createHappypackPlugin(),
+  ],
 });
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
   quiet: true,
   heartbeat: 2000,
-  log: false
+  log: false,
 });
 
 app.use('/static', express.static(path.resolve(__dirname, './static')));
