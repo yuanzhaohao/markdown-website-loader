@@ -12,7 +12,7 @@ npm install markdown-website-loader
 
 ### Usage
 
-```js
+```javascript
 {
   module: {
     rules: [
