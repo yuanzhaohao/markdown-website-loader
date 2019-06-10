@@ -5,9 +5,9 @@ import { Spin, Grid } from 'dashkit-ui';
 import Example from './example';
 const { Row, Col } = Grid;
 
-type PageProps = RouteComponentProps & {
-  dataSource: any;
-  locale?: string;
+type PageProps = {
+  route: string;
+  locale: string;
 };
 
 type PageState = {
@@ -26,16 +26,12 @@ class Page extends React.Component<PageProps, PageState> {
   }
 
   async componentDidMount() {
-    const page = this.props.location.pathname.replace('/', '');
-    const locale = 'en-US';
-    const dataSource = await import(`../docs/${page}/${locale}.md`);
-
-    console.log(dataSource);
+    const { route, locale } = this.props;
+    const dataSource = await import(`../docs/${route}/${locale}.md`);
 
     this.setState({
       dataSource,
     });
-
     const demoElement = document.getElementById('demos');
 
     if (demoElement && dataSource.demos && Object.keys(dataSource.demos)) {

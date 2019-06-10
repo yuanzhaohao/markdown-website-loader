@@ -78,7 +78,7 @@ const compiler = webpack({
         use: ['style-loader', 'happypack/loader?id=css'],
       },
       {
-        test: /\.md$/,
+        test: /\.md(\?.*)?$/,
         // test: /(en\-US)|(zh\-CN)\.md(\?.*)?$/,
         loader: [path.resolve(__dirname, '../index.js')],
       },

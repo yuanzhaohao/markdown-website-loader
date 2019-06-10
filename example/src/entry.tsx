@@ -5,22 +5,35 @@ import * as ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Layout } from 'dashkit-ui';
 import CommonSidebar from './sidebar';
-import asyncComponent from './async-component';
+// import asyncComponent from './async-component';
+import routes from './routes';
 import Page from './page';
 const { Content, Footer } = Layout;
-const IndexPage = asyncComponent(() => import('./index'));
-const pages = ['checkbox', 'button', 'grid', 'menu', 'message', 'pagination'];
+let pages = {};
+Object.keys(routes)
+  .filter(v => v !== 'components')
+  .forEach(key => {
+    pages[key] = routes[key];
+  });
+pages = {
+  ...pages,
+  ...routes.components,
+};
 
 const App = () => (
   <HashRouter>
     <Layout>
-      <CommonSidebar pages={pages} />
+      <CommonSidebar pages={routes.components} />
       <Layout className="app-layout">
         <Content className="app-content">
           <Switch>
-            <Route exact path="/" component={IndexPage} />
-            {pages.map(page => (
-              <Route key={page} exact path={`/${page}`} component={Page} />
+            {Object.keys(pages).map(key => (
+              <Route
+                exact
+                key={key}
+                path={key}
+                render={() => <Page route={pages[key]} locale="en-US" />}
+              />
             ))}
             <Redirect to="/" />
           </Switch>
